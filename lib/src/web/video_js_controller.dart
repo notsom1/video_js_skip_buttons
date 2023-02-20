@@ -287,13 +287,27 @@ class VideoJsController {
     VideoJsResults().listenToValueFromJs(playerId, 'onReady', onReady);
   }
 
-  /// Add callback to be triggered on playback end
-  onPlayerEnd(Function(String) onEnd) {
+  /// Add callback to be triggered on playback start
+  onPlay(Function(String) onPlay) {
     final html.Element scriptElement = html.ScriptElement()
-      ..id = "onPlayerEnd"
+      ..id = "onPlay"
+      ..innerHtml = VideoJsScripts().onPlay(playerId);
+    html.Element? ele = html.querySelector("#onPlay");
+    if (html.querySelector("#onPlay") != null) {
+      ele!.remove();
+    }
+    html.querySelector('body')!.children.add(scriptElement);
+    VideoJsResults()
+        .listenToValueFromJs(playerId, 'onPlay', onPlay);
+  }
+
+  /// Add callback to be triggered on playback end
+  onEnd(Function(String) onEnd) {
+    final html.Element scriptElement = html.ScriptElement()
+      ..id = "onEnd"
       ..innerHtml = VideoJsScripts().onEnd(playerId);
-    html.Element? ele = html.querySelector("#onPlayerEnd");
-    if (html.querySelector("#onPlayerEnd") != null) {
+    html.Element? ele = html.querySelector("#onEnd");
+    if (html.querySelector("#onEnd") != null) {
       ele!.remove();
     }
     html.querySelector('body')!.children.add(scriptElement);

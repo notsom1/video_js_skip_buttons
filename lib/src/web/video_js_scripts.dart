@@ -31,6 +31,12 @@ class VideoJsScripts {
     callBackToDartSide('$playerId', 'onReady' , 'true');
     });""";
 
+  String onPlay(String playerId) => """
+    var player = videojs.getPlayer('$playerId');
+    player.on('play', function() {
+    callBackToDartSide('$playerId', 'onPlay' , 'true');
+    });""";
+
   String onEnd(String playerId) => """
     var player = videojs.getPlayer('$playerId');
     player.on('ended', function() {
