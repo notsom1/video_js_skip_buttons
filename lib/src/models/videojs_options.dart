@@ -62,6 +62,10 @@ class VideoJsOptions {
   /// play video but where you might not want to see an error displayed.
   final bool? suppressNotSupportedError;
 
+  final bool? skipButtons;
+  final int? forwardDuration;
+  final int? backwardDuration;
+
   VideoJsOptions(
       {this.controls,
       this.loop,
@@ -77,7 +81,10 @@ class VideoJsOptions {
       this.preferFullWindow,
       this.responsive,
       this.sources,
-      this.suppressNotSupportedError});
+      this.suppressNotSupportedError,
+      this.skipButtons,
+      this.forwardDuration,
+      this.backwardDuration});
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -103,6 +110,15 @@ class VideoJsOptions {
     }
     if (sources != null) {
       data['sources'] = sources!.map((v) => v.toJson()).toList();
+    }
+
+    if (skipButtons != null) {
+      data['plugins'] = {
+        'seekButtons': {
+          'forward': forwardDuration ?? 3,
+          'back': backwardDuration ?? 3
+        }
+      };
     }
 
     if (fluid != null) data['fluid'] = fluid;

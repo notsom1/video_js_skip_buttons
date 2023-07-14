@@ -4,7 +4,6 @@ import 'package:video_js_themed/src/models/videojs_options.dart';
 import 'package:video_js_themed/src/web/video_js_scripts.dart';
 import 'package:video_js_themed/src/web/video_results.dart';
 
-
 class VideoJsController {
   final String playerId;
   final VideoJsOptions? videoJsOptions;
@@ -297,8 +296,7 @@ class VideoJsController {
       ele!.remove();
     }
     html.querySelector('body')!.children.add(scriptElement);
-    VideoJsResults()
-        .listenToValueFromJs(playerId, 'onPlay', onPlay);
+    VideoJsResults().listenToValueFromJs(playerId, 'onPlay', onPlay);
   }
 
   /// Add callback to be triggered on playback end
@@ -311,8 +309,7 @@ class VideoJsController {
       ele!.remove();
     }
     html.querySelector('body')!.children.add(scriptElement);
-    VideoJsResults()
-        .listenToValueFromJs(playerId, 'onEnd', onEnd);
+    VideoJsResults().listenToValueFromJs(playerId, 'onEnd', onEnd);
   }
 
   /// This method is available on all Video.js players and components.
