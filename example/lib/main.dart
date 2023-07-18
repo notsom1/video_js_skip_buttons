@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_js_themed/video_js.dart';
+import 'package:video_js_themed2/video_js.dart';
 
 const sourceUrl =
 //'https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8';

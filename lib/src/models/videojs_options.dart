@@ -1,4 +1,4 @@
-import 'package:video_js_themed/src/models/source.dart';
+import 'package:video_js_themed2/src/models/source.dart';
 
 class VideoJsOptions {
   /// Determines whether or not the player has controls that the user can interact with.

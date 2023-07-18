@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:universal_html/js.dart';
 
-import 'package:video_js_themed/src/models/result_from_videojs.dart';
+import 'package:video_js_themed2/src/models/result_from_videojs.dart';
 
 class VideoJsResults {
   final StreamController<ResultFromVideoJs> _onVolumeFromJsStream =

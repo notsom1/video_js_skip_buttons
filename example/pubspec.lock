@@ -253,7 +253,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  video_js_themed:
+  video_js_themed2:
     dependency: "direct main"
     description:
       path: ".."

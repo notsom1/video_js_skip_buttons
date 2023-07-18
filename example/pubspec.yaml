@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  video_js_themed:
+  video_js_themed2:
     path: ../
 
 

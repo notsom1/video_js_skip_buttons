@@ -1,11 +1,10 @@
 import 'dart:ui' as ui;
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:universal_html/html.dart' as html;
-import 'package:video_js_themed/src/view_factory_plugin.dart';
-import 'package:video_js_themed/src/web/video_js_scripts.dart';
+import 'package:video_js_themed2/src/view_factory_plugin.dart';
+import 'package:video_js_themed2/src/web/video_js_scripts.dart';
 
 class ViewFactoryWeb extends ViewFactoryPlugin {
-
   static final ViewFactoryWeb platform = ViewFactoryWeb._();
 
   static void registerWith(Registrar registrar) {
@@ -33,10 +32,10 @@ class ViewFactoryWeb extends ViewFactoryPlugin {
         ..children = [
           html.VideoElement()
             ..id = playerId
-          // ..style.minHeight = '100%'
-          // ..style.minHeight = '100%'
-          // ..style.width = '100%'
-          // ..style.height = 'auto'
+            // ..style.minHeight = '100%'
+            // ..style.minHeight = '100%'
+            // ..style.width = '100%'
+            // ..style.height = 'auto'
             ..className = 'video-js $theme'
             ..width = width.toInt()
             ..height = height.toInt(),
